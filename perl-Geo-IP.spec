@@ -12,7 +12,6 @@ Url:		http://search.cpan.org/dist/%{module}
 Source:		http://search.cpan.org/CPAN/authors/id/T/TJ/TJMATHER/%{module}-%{version}.tar.bz2
 BuildRequires:	perl-devel
 BuildRequires:  libgeoip-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
 
 %description
 This module uses a file based database. This database simply contains 
