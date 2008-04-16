@@ -1,6 +1,6 @@
 %define module 	Geo-IP
-%define version 1.30
-%define release %mkrel 2
+%define version 1.31
+%define release %mkrel 1
 
 Summary:	Look up country by IP Address
 Name: 		perl-%{module}
