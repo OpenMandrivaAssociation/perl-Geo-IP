@@ -1,6 +1,6 @@
 %define module 	Geo-IP
-%define version 1.31
-%define release %mkrel 2
+%define version 1.34
+%define release %mkrel 1
 
 Summary:	Look up country by IP Address
 Name: 		perl-%{module}
@@ -9,10 +9,10 @@ Release: 	%{release}
 License:	GPL or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{module}
-Source:		http://search.cpan.org/CPAN/authors/id/T/TJ/TJMATHER/%{module}-%{version}.tar.bz2
+Source:     http://www.cpan.org/modules/by-module/Geo/%{module}-%{version}.tar.gz
 BuildRequires:	perl-devel
 BuildRequires:  libgeoip-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}-buildroot
+BuildRoot: 	%{_tmppath}/%{name}-%{version}
 
 %description
 This module uses a file based database. This database simply contains 
@@ -29,19 +29,21 @@ software export controls.
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
 %{__make}
+
+%check
 make test
 
 %install
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 %makeinstall_std
 
 %clean 
-rm -rf $RPM_BUILD_ROOT
+rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root)
 %doc README Changes
 %{perl_vendorarch}/Geo
-%{perl_vendorarch}/auto/Geo/
+%{perl_vendorarch}/auto/Geo
 %{_mandir}/*/*
 
