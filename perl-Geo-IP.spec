@@ -1,5 +1,5 @@
 %define module 	Geo-IP
-%define version 1.34
+%define version 1.35
 %define release %mkrel 1
 
 Summary:	Look up country by IP Address
