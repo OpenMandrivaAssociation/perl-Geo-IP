@@ -1,18 +1,19 @@
-%define module 	Geo-IP
-%define version 1.38
-%define release %mkrel 1
+%define upstream_name 	 Geo-IP
+%define upstream_version 1.38
+
+Name:       perl-%{upstream_name}
+Version:    %perl_convert_version %{upstream_version}
+Release:    %mkrel 1
 
 Summary:	Look up country by IP Address
-Name: 		perl-%{module}
-Version: 	%{version}
-Release: 	%{release}
-License:	GPL or Artistic
+License:	GPL+ or Artistic
 Group:		Development/Perl
-Url:		http://search.cpan.org/dist/%{module}
-Source:     http://www.cpan.org/modules/by-module/Geo/%{module}-%{version}.tar.gz
+Url:		http://search.cpan.org/dist/%{upstream_name}
+Source0:    http://www.cpan.org/modules/by-module/Geo/%{upstream_name}-%{upstream_version}.tar.gz
+
 BuildRequires:	perl-devel
 BuildRequires:  libgeoip-devel
-BuildRoot: 	%{_tmppath}/%{name}-%{version}
+BuildRoot: 	%{_tmppath}/%{name}-%{version}-%{release}
 
 %description
 This module uses a file based database. This database simply contains 
@@ -24,7 +25,7 @@ countries of your visiters, for credit card fraud detection, and for
 software export controls.
 
 %prep
-%setup -q -n %{module}-%{version}
+%setup -q -n %{upstream_name}-%{upstream_version}
 
 %build
 %{__perl} Makefile.PL INSTALLDIRS=vendor
@@ -46,4 +47,3 @@ rm -rf %{buildroot}
 %{perl_vendorarch}/Geo
 %{perl_vendorarch}/auto/Geo
 %{_mandir}/*/*
-
