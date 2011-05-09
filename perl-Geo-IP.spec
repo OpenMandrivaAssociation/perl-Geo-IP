@@ -1,9 +1,9 @@
 %define upstream_name 	 Geo-IP
-%define upstream_version 1.38
+%define upstream_version 1.39
 
 Name:       perl-%{upstream_name}
 Version:    %perl_convert_version %{upstream_version}
-Release:    %mkrel 2
+Release:    %mkrel 1
 
 Summary:	Look up country by IP Address
 License:	GPL+ or Artistic
