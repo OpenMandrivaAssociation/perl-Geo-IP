@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   Geo-IP-1.42.tar.gz: a26c28cb3b79505942efbda4ab17964e1342bef1
+sources:
+  Geo-IP-1.43.tar.gz: 6b4dc9dce7dbcd076934630c577777ff19f02abb
