@@ -1,14 +1,14 @@
 %define upstream_name Geo-IP
-%define upstream_version 1.43
+%define upstream_version 1.45
 
 Summary:	Look up country by IP Address
 Name:		perl-%{upstream_name}
 Version:	%perl_convert_version %{upstream_version}
-Release:	2
+Release:	1
 License:	GPL+ or Artistic
 Group:		Development/Perl
 Url:		http://search.cpan.org/dist/%{upstream_name}
-Source0:	http://www.cpan.org/modules/by-module/Geo/Geo-IP-%{upstream_version}.tar.gz
+Source0:	http://www.cpan.org/modules/by-module/Geo/%{upstream_name}-%{upstream_version}.tar.gz
 BuildRequires:	perl(ExtUtils::MakeMaker)
 BuildRequires:	perl-devel
 BuildRequires:	pkgconfig(geoip)
@@ -41,5 +41,3 @@ make test
 %{perl_vendorarch}/Geo
 %{perl_vendorarch}/auto/Geo
 %{_mandir}/*/*
-
-
